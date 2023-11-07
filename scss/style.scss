@@ -1,0 +1,265 @@
+@import "nullstyle.scss";
+@import url("https://fonts.googleapis.com/css?family=Inter:regular,700&display=swap");
+
+// цвета
+$mainColor: #fff;
+$bgColor: #2d2d2d;
+$aquaColor: #00fff0;
+$greenColor: #2cff5b;
+$purpleColor: #fb40ff;
+$yellowColor: #ebff00;
+// цвета
+
+body {
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	color: $mainColor;
+	background-color: $bgColor;
+}
+
+[class*="__container"] {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+//========================================================================================================================================================
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.calculation {
+	padding: 70px 0;
+	@media (max-width: 992px) {
+		padding: 50px 0 70px 0;
+	}
+	@media (max-width: 767px) {
+		padding: 30px 0 70px 0;
+	}
+
+	// .calculation__container
+	&__container {
+		text-align: center;
+	}
+
+	// .calculation__title
+	&__title {
+		font-size: 40px;
+		line-height: (44/40 * 100%);
+		font-weight: 700;
+		text-transform: uppercase;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: 767px) {
+			font-size: 36px;
+		}
+	}
+
+	// .calculation__descr
+
+	&__descr {
+		font-size: 20px;
+		line-height: (28/20 * 100%);
+		&:not(:last-child) {
+			margin-bottom: 80px;
+		}
+		&_bold {
+			font-weight: 700;
+		}
+		&_aqua {
+			color: $aquaColor;
+			white-space: nowrap;
+		}
+		&_green {
+			color: $greenColor;
+			white-space: nowrap;
+		}
+		&_purpl {
+			color: $purpleColor;
+			white-space: nowrap;
+		}
+		&_yellow {
+			color: $yellowColor;
+			white-space: nowrap;
+		}
+		@media (max-width: 992px) {
+			&:not(:last-child) {
+				margin-bottom: 50px;
+				font-size: 18px;
+			}
+		}
+		@media (max-width: 480px) {
+			&:not(:last-child) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	// .calculation__wrapper
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	// .calculation__body
+
+	&__body {
+		max-width: 400px;
+		width: 100%;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	// .calculation__text
+
+	&__text {
+		text-align: left;
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	// .calculation__input
+
+	&__input {
+		color: $mainColor;
+		font-weight: 700;
+		width: 100%;
+		background-color: transparent;
+		border-radius: 8px;
+		border: 1px solid $aquaColor;
+		padding: 15px;
+	}
+
+	// .calculation__dropdown
+
+	&__dropdown {
+		position: relative;
+		text-align: left;
+		min-width: 45px;
+		border: 1px solid $aquaColor;
+		border-radius: 8px;
+		transition: background-color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #202020;
+				color: $bgColor;
+			}
+		}
+	}
+
+	// .calculation__select
+
+	&__select {
+		padding: 15px 15px 15px 15px;
+		color: $mainColor;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 6px;
+		cursor: pointer;
+	}
+
+	// .calculation__selected
+
+	&__selected {
+		&_big {
+			font-size: 16px;
+		}
+	}
+
+	// .calculation__caret
+
+	&__caret {
+		transition: 0.3s;
+		&.caret-rotate {
+			transform: rotate(180deg);
+		}
+	}
+
+	// .calculation__list
+
+	&__list {
+		padding: 10px 5px;
+		background: $bgColor;
+		border: 15px solid $bgColor;
+		box-shadow: 0 0 0.8em 1em rgba(0, 0, 0, 0.1);
+		border-radius: 6px;
+		color: $mainColor;
+		position: absolute;
+		top: 55px;
+		left: 43%;
+		width: 101%;
+		transform: translateX(-43%);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3s;
+		z-index: 1;
+		&.menu-open {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+
+	// .calculation__item
+
+	&__item {
+		padding: 3px 5px;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: all 0.3s ease 0s;
+		&:not(:last-child) {
+			margin-bottom: 18px;
+		}
+		span {
+			font-weight: 700;
+			font-size: 20px;
+		}
+		&.active {
+			background: #202020;
+			color: $mainColor;
+			font-size: 18px;
+			padding: 10px;
+			@media (any-hover: hover) {
+				&:hover {
+					background: $mainColor;
+					color: $bgColor;
+				}
+			}
+		}
+	}
+
+	// .calculation__btn
+
+	&__btn {
+		width: 100%;
+		color: $mainColor;
+		background-color: transparent;
+		font-weight: 700;
+		text-transform: uppercase;
+		border: 1px solid $aquaColor;
+		padding: 15px;
+		border-radius: 8px;
+		transition:
+			background-color 0.3s ease 0s,
+			color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: #00fff0;
+				color: #000;
+			}
+		}
+	}
+
+	// .calculation__total-value
+
+	&__total-value {
+	}
+}
