@@ -25,13 +25,14 @@
 					<div class="calculation__wrapper">
 						<div class="calculation__body">
 							<p class="calculation__text">Введите первое число</p>
-							<input type="text" class="calculation__input">
+							<input id="first-input-value" type="number" class="calculation__input">
 						</div>
 						<div class="calculation__body">
 							<p class="calculation__text">Выберите функционал</p>
 							<div class="calculation__dropdown">
 								<div class="calculation__select">
-									<span class="calculation__selected calculation__selected_big">сложить +</span>
+									<span id="selected-action" class="calculation__selected calculation__selected_big">сложить
+										+</span>
 									<div class="calculation__caret">
 										<svg width="10" height="12" viewBox="0 0 10 6" fill="none"
 											xmlns="http://www.w3.org/2000/svg">
@@ -42,16 +43,16 @@
 									</div>
 								</div>
 								<ul class="calculation__list">
-									<li class="calculation__item active">сложить <span>+</span></li>
-									<li class="calculation__item">вычесть <span>-</span></li>
-									<li class="calculation__item">умножить <span>*</span></li>
-									<li class="calculation__item">разделить <span>/</span></li>
+									<li id="addition" class="calculation__item active">сложить +</li>
+									<li id="subtraction" class="calculation__item">вычесть -</li>
+									<li id="multiplication" class="calculation__item">умножить *</li>
+									<li id="division" class="calculation__item">разделить /</li>
 								</ul>
 							</div>
 						</div>
 						<div class="calculation__body">
 							<p class="calculation__text">Введите второе число</p>
-							<input type="text" class="calculation__input">
+							<input id="second-input-value" type="number" class="calculation__input">
 						</div>
 						<div class="calculation__body">
 							<p class="calculation__text">Нажмите на кнопку “посчитать =”</p>
@@ -68,3 +69,4 @@
 </body>
 
 </html>
+
