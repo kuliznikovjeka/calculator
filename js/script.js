@@ -8,12 +8,19 @@ const division = document.getElementById('division');
 const btn = document.getElementById('btn');
 let result = document.getElementById('result');
 
+const OPERATION = {
+	ADDITION: 'сложить +',
+	SUBSTRACTION: 'вычесть -',
+	MULTIPLICATION: 'умножить *',
+	DIVISION: 'разделить /',
+}
+
 const additionNumbers = () => {
 	return result.textContent = `Итого: ${+firstInput.value + +secondInput.value}`;
 }
 
 const substractNumbers = () => {
-	return result.textContent = `Итого: ${firstInput.value - +secondInput.value}`;
+	return result.textContent = `Итого: ${+firstInput.value - +secondInput.value}`;
 }
 
 const multiplyNumbers = () => {
@@ -38,25 +45,24 @@ btn.addEventListener('click', () => {
 
 	switch (selectedAction.textContent) {
 
-		case 'сложить +':
+		case OPERATION.ADDITION:
 			additionNumbers();
 			break;
 
-		case 'вычесть -':
+		case OPERATION.SUBSTRACTION:
 			substractNumbers();
 			break;
 
-		case 'умножить *':
+		case OPERATION.MULTIPLICATION:
 			multiplyNumbers();
 			break;
 
-		case 'разделить /':
+		case OPERATION.DIVISION:
 			divideNumbers();
 			break;
 
 		default:
 			additionNumbers();
-
 	}
 
 	renderValues();
