@@ -16,11 +16,11 @@ const OPERATION = {
 }
 
 const additionNumbers = () => {
-	return result.textContent = `Итого: ${+firstInput.value + +secondInput.value}`;
+	return result.textContent = `Итого: ${(+firstInput.value * 100 + +secondInput.value * 100) / 100}`;
 }
 
 const substractNumbers = () => {
-	return result.textContent = `Итого: ${+firstInput.value - +secondInput.value}`;
+	return result.textContent = `Итого: ${(+firstInput.value * 100 - +secondInput.value * 100) / 100}`;
 }
 
 const multiplyNumbers = () => {
