@@ -259,8 +259,54 @@ body {
 		}
 	}
 
+	// .calculation__clue
+
+	&__clue {
+		font-size: 14px;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+		span {
+			font-size: 18px;
+			font-weight: 700;
+		}
+	}
+
+	// .calculation__results
+	&__results {
+		font-weight: 700;
+		text-align: left;
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
 	// .calculation__total-value
 
 	&__total-value {
+		cursor: pointer;
+		position: relative;
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+		&::before,
+		&::after {
+			content: "";
+			right: -35px;
+			top: 50%;
+			// transform: translateY(-50%);
+			position: absolute;
+			width: 18px;
+			height: 2px;
+			background: #00fff0;
+		}
+		&::before {
+			content: "";
+			transform: rotate(45deg);
+		}
+		&::after {
+			content: "";
+			transform: rotate(-45deg);
+		}
 	}
 }

@@ -367,3 +367,56 @@ body {
     color: #000;
   }
 }
+
+.calculation__clue {
+  font-size: 14px;
+}
+
+.calculation__clue:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.calculation__clue span {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.calculation__results {
+  font-weight: 700;
+  text-align: left;
+}
+
+.calculation__results:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.calculation__total-value {
+  cursor: pointer;
+  position: relative;
+}
+
+.calculation__total-value:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.calculation__total-value::before, .calculation__total-value::after {
+  content: "";
+  right: -35px;
+  top: 50%;
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #00fff0;
+}
+
+.calculation__total-value::before {
+  content: "";
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.calculation__total-value::after {
+  content: "";
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
