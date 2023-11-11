@@ -1,12 +1,12 @@
 const firstInput = document.getElementById('first-input-value');
 const secondInput = document.getElementById('second-input-value');
 const selectedAction = document.getElementById('selected-action');
-const addition = document.getElementById('addition');
-const subtraction = document.getElementById('subtraction');
-const multiplication = document.getElementById('multiplication');
-const division = document.getElementById('division');
 const btn = document.getElementById('btn');
 const titleCaclResult = document.querySelector('.calculation__results');
+
+const ERROR = {
+	INFINITY: 'ОШИБКА! На ноль делить нельзя',
+}
 
 const OPERATION = {
 	ADDITION: 'сложить +',
@@ -54,14 +54,13 @@ const multiplyNumbers = () => {
 }
 
 const divideNumbers = () => {
-	if (+secondInput.value === 0) return result.textContent = 'ОШИБКА! На ноль делить нельзя';
-
 	const result = getParagraf();
 	titleCaclResult.after(result);
+	result.addEventListener('click', deleteParagraph);
+
+	if (+secondInput.value === 0) return result.textContent = ERROR.INFINITY;
 
 	const operation = `${+firstInput.value} / ${+secondInput.value}`
-
-	result.addEventListener('click', deleteParagraph);
 	return result.textContent = `${operation} = ${+firstInput.value / +secondInput.value}`;
 }
 
